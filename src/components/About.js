@@ -11,7 +11,7 @@ function About() {
     }, [])
     
   return (
-    <div>About{a.state.name}</div>
+    <div>About{a.State.name}</div>
   )
 }
 
