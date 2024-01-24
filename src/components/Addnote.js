@@ -1,19 +1,18 @@
-import React, { useContext,useState } from "react";
-import NoteContext from "../context/Note/Notecontext";
+import React, { useContext, useState } from 'react'
+import NoteContext from '../context/Note/Notecontext'
 
 const Addnote = () => {
-  const Context = useContext(NoteContext);
-  const { addNote } = Context;
-  const[Notes,setNotes] =useState({titel:"",description:"",tag:""})
-const Handleclick=(e)=>{
-    e.preventDefault();
-    addNote(Notes.titel,Notes.description,Notes.tag)
-}
+  const Context = useContext(NoteContext)
+  const { addNote } = Context
+  const [notes, setNotes] = useState({ titel: '', description: '', tag: '' })
+  const Handleclick = e => {
+    e.preventDefault()
+    addNote(notes.titel, notes.description, notes.tag)
+  }
 
-const onchange=(e)=>{
-    setNotes({...Notes,[e.target.name]:e.target.value})
-}
-
+  const onchange = e => {
+    setNotes({ ...notes, [e.target.name]: e.target.value })
+  }
 
   return (
     <div className="container my-3">
@@ -29,7 +28,6 @@ const onchange=(e)=>{
             id="titel"
             name="titel"
             onChange={onchange}
-
           />
         </div>
         <div className="mb-3">
@@ -62,6 +60,6 @@ const onchange=(e)=>{
       </form>
     </div>
   );
-};
+}
 
-export default Addnote;
+export default Addnote
